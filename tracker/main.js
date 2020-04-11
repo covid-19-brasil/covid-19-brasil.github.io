@@ -70,7 +70,7 @@ fetch(URL_PARTICULAR, DEF_API).then(response => response.json().then(data => { /
        inforCasesBrazil = result.cases;
 	   inforCasesBrazilString = inforCasesBrazil.replace(/[,]+/g, '');// regex para retirar a ','*/
 	   //inforRecoverdBrazil = result.total_recovered;
-	   inforNewDeathsBrazil = parseFloat(result.deaths) - (-1*numMortos);
+	   inforNewDeathsBrazil = parseFloat(result.deaths) - numMortos;
 	   inforSupectCasesBrazil = parseFloat(inforCasesBrazilString) - numConfirmados;
 	  document.getElementById("num-suspeitos").innerHTML =  inforSupectCasesBrazil;
 	  document.getElementById("obitos-informados").innerHTML =  inforNewDeathsBrazil;	
