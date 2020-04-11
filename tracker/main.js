@@ -234,7 +234,7 @@ async function createChartRegion(){ // funcao para construir o chart de classifi
 		        fill:false,
 		        backgroundColor: 'mediumseagreen',
 		        borderColor:'mediumseagreen'		                 
-		    },{
+		    }/*,{
 		        label: 'Óbitos',
 		        data: labelsRegionDeads,                
 		        type:'horizontalBar',
@@ -242,7 +242,7 @@ async function createChartRegion(){ // funcao para construir o chart de classifi
 		        backgroundColor: 'gray',
 		        borderColor: 'gray',
 		        borderWidth: 2	
-	        }],
+	        }*/],
 	        labels:labelsRegion,	      
 	    },
 	    options: {
