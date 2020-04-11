@@ -68,7 +68,7 @@ fetch(URL_PARTICULAR, DEF_API).then(response => response.json().then(data => { /
 	   //inforCountryActual =  inforCountry.slice(-1)[0]; // pegar ultimo elemento do array 
 	   result = inforCountry.find( seed => seed.country_name === 'Brazil' ); // procurar pelo Brazil no conjunto de arrays em inforCountry
            inforCasesBrazil = result.cases;
-           sinforDeathBrazil = result.deaths;
+           inforDeathBrazil = result.deaths;
 	   inforCasesBrazilString = inforCasesBrazil.replace(/[,]+/g, '');// regex para retirar a ','*/
 	   //inforRecoverdBrazil = result.total_recovered;	   
 	   inforDeathBrazilString = inforDeathBrazil.replace(/[,]+/g, '');
