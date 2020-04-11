@@ -67,13 +67,15 @@ fetch(URL_PARTICULAR, DEF_API).then(response => response.json().then(data => { /
 	   inforCountry = data.countries_stat;     //atribui a variavel inforCountry as informações colhidas no array stat_by_country
 	   //inforCountryActual =  inforCountry.slice(-1)[0]; // pegar ultimo elemento do array 
 	   result = inforCountry.find( seed => seed.country_name === 'Brazil' ); // procurar pelo Brazil no conjunto de arrays em inforCountry
-       inforCasesBrazil = result.cases;
+           inforCasesBrazil = result.cases;
+           sinforDeathBrazil = result.deaths;
 	   inforCasesBrazilString = inforCasesBrazil.replace(/[,]+/g, '');// regex para retirar a ','*/
-	   //inforRecoverdBrazil = result.total_recovered;
-	   inforNewDeathsBrazil = parseFloat(result.deaths) + numMortos;
-	   inforSupectCasesBrazil = parseFloat(inforCasesBrazilString) - numConfirmados;
+	   //inforRecoverdBrazil = result.total_recovered;	   
+	   inforDeathBrazilString = inforDeathBrazil.replace(/[,]+/g, '');
+	   inforNewDeathsBrazil = parseFloat(inforDeathBrazilString) - numMortos;
+	   inforSupectCasesBrazil = parseFloat(inforCasesBrazilString) - numConfirmados  ;
 	  document.getElementById("num-suspeitos").innerHTML =  inforSupectCasesBrazil;
-	  document.getElementById("obitos-informados").innerHTML =  inforNewDeathsBrazil;	
+	  document.getElementById("obitos-informados").innerHTML =  inforNewDeathsBrazil;
 	}))
 	.catch(err => {
 	    console.log(err);
