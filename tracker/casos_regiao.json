@@ -1,27 +1,27 @@
 [
    {
       "regiao":"Norte",
-      "casos":1663,
+      "casos":2416,
       "mortes":54
    },
    {
       "regiao":"Nordeste",
-      "casos":3882,
+      "casos":5213,
       "mortes":173
    },
    {
       "regiao":"Centro-Oeste",
-      "casos":1009,
+      "casos":1188,
       "mortes":31
    },
    {
       "regiao":"Sudeste",
-      "casos":12125,
+      "casos":14128,
       "mortes":639
    },
    {
       "regiao":"Sul",
-      "casos":2048,
+      "casos":2317,
       "mortes":51
    }
 ]
