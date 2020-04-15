@@ -29,6 +29,7 @@ let statisticDate; //data da ultima atualização dos dados
 let inforCountry=[];  //todas as informações por pais 
 let inforDeathBrazil;
 let inforRecoverdBrazilString;
+let recoveredBrazil;
 let result = []; // guarda o valor do array achando em find inforCountry
 
 let inforCountryActual=[]; //ultimas informações por pais 
@@ -73,12 +74,14 @@ fetch(URL_PARTICULAR, DEF_API).then(response => response.json().then(data => { /
 	   inforCasesBrazilString = inforCasesBrazil.replace(/[,]+/g, '');// regex para retirar a ','*/
 	   inforRecoverdBrazil = result.total_recovered;	   
 	   inforDeathBrazilString = inforDeathBrazil.replace(/[,]+/g, '');
-	   inforRecoverdBrazilString = parseFloat(inforRecoverdBrazil);
+	
+	   inforRecoverdBrazilString = inforRecoverdBrazil.replace(/[,]+/g, '');
+	   recoveredBrazil = parseFloat(inforRecoverdBrazilString);
 	   inforNewDeathsBrazil = parseFloat(inforDeathBrazilString) - numMortos;
 	   inforSupectCasesBrazil = parseFloat(inforCasesBrazilString) - numConfirmados  ;
 	  document.getElementById("num-suspeitos").innerHTML =  inforSupectCasesBrazil;
 	  document.getElementById("obitos-informados").innerHTML =  inforNewDeathsBrazil;
-	  document.getElementById("recuperados").innerHTML =  inforRecoverdBrazilString ;
+	  document.getElementById("recuperados").innerHTML =   recoveredBrazil ;
 	}))
 	.catch(err => {
 	    console.log(err);
