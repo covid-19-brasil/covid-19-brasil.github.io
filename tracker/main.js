@@ -77,8 +77,8 @@ fetch(URL_PARTICULAR, DEF_API).then(response => response.json().then(data => { /
 	
 	   inforRecoverdBrazilString = inforRecoverdBrazil.replace(/[,]+/g, '');
 	   recoveredBrazil = parseFloat(inforRecoverdBrazilString);
-	   inforNewDeathsBrazil = parseFloat(inforDeathBrazilString) - numMortos;
-	   inforSupectCasesBrazil = parseFloat(inforCasesBrazilString) - numConfirmados  ;
+	   inforNewDeathsBrazil = numMortos - parseFloat(inforDeathBrazilString);
+	   inforSupectCasesBrazil = numConfirmados - parseFloat(inforCasesBrazilString);
 	  document.getElementById("num-suspeitos").innerHTML =  inforSupectCasesBrazil;
 	  document.getElementById("obitos-informados").innerHTML =  inforNewDeathsBrazil;
 	  document.getElementById("recuperados").innerHTML =   recoveredBrazil ;
